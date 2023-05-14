@@ -11,7 +11,8 @@
 3. Rise.pptx
 4. Rise2.0.ino
 5. IMG-6747.jpg
-6. IMG-6748.jpg
+6. ThinkerCad - Shema.png
+7. Rise.png
 
 GitHub: https://github.com/TsKDY/Rise
 

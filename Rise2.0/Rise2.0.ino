@@ -1,4 +1,6 @@
 #include <math.h>
+#include <LiquidCrystal_I2C.h>
+LiquidCrystal_I2C lcd(0x27, 20, 4);
 int greenLedPin = 6;
 int yellowLedPin = 4;
 int redLedPin = 3;
@@ -22,6 +24,11 @@ void setup() {
   pinMode(whiteLedPin,OUTPUT);
   pinMode(button,INPUT);
    pinMode(heet,OUTPUT);
+
+   lcd.init();
+   lcd.backlight();
+   lcd.setCursor(0,0);
+   lcd.print("The temp is: ");
 }
 
 double Termistor(int analogOkuma){
@@ -36,10 +43,13 @@ double Termistor(int analogOkuma){
 void loop()
 {
 
-int deger = analogRead(A2);
+  int deger = analogRead(A2);
   double sicaklik = Termistor(deger);
   Serial.println(sicaklik);
 
+  lcd_1.setCursor(0, 1);
+  lcd_1.print(sicaklik);
+  
   if(sicaklik < 22)
   {
   	digitalWrite(heet, HIGH);
